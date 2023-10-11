@@ -97,7 +97,26 @@
           </div>
         </div>
       </section>
-
+      <section class="store-gallery" id="gallery">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8" data-aos="zoom-in">
+              <Transition name="slide-fade" mode="out-in"> 
+                <img :src="photos[activePhoto].url" :key="photos[activePhoto].id" class="w-100 main-image" alt="">
+              </Transition>
+            </div>
+            <div class="col-lg-2">
+              <div class="row">
+                <div class="col-3 col-lg-12 mt-2 mt-lg-0" v-for="(photo, index) in photos" :key="photos.id" data-aos="zoom-in" data-aos-delay="100">
+                  <a href="#" @click="changeActive(index)">
+                    <img :src="photo.url" alt="" class="w-100 thumbnail-image" :class="{active: index == activePhoto}">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <footer>
@@ -112,6 +131,7 @@
       </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
+    <script src="vendor/vue/vue.js"></script>
     <script src="/vendor/jquery/jquery.slim.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -120,7 +140,7 @@
     </script>
     <script>
        var gallery = new Vue({
-          el: "#galerry",
+          el: "#gallery",
           mounted(){
             AOS.init();
           },
@@ -129,19 +149,19 @@
             photos: [
                         {
                           id: 1,
-                          url: "images/detail1.png"
+                          url: "images/detail-test.jpeg"
                         },
                         {
                           id: 2,
-                          url: "images/detail2.png"
+                          url: "images/detail-test2.jpeg"
                         },
                         {
                           id: 3,
-                          url: "images/detail3.png"
+                          url: "images/detail-test3.jpeg"
                         },
                         {
                           id: 4,
-                          url: "images/detail4.png"
+                          url: "images/detail-test4.jpeg"
                         }
             ]
           },
@@ -152,7 +172,6 @@
           }
        })
     </script>
-    <script src="vendor/vue/vue.js"></script>
     <script src="/script/navbar-scroll.js"></script>
   </body>
 </html>
