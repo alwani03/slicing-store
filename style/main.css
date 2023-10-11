@@ -11311,27 +11311,27 @@
  }
  
  .component-categories {
-   background-color: #f4f4f4;
-   border-radius: 8px;
-   padding: 30px 30px 10px 30px;
-   margin-bottom: 20px;
-   -webkit-transition: all 0.2s ease-in-out;
-   transition: all 0.2s ease-in-out;
- }
- 
- .component-categories:hover {
-   -webkit-transform: scale(1.05);
-           transform: scale(1.05);
-   text-decoration: none;
- }
- 
- .component-categories .categories-text {
-   color: #0c0d36;
-   font-weight: normal;
-   font-size: 18px;
-   text-align: center;
-   margin-top: 12px;
- }
+  background: #F4F4F4;
+  border-radius: 8px;
+  padding: 30px 30px 10px 30px;   
+  margin-bottom: 20px;
+  transition: all 0.2 ease-in-out;
+
+  &:hover {
+      transform: scale(1.05);
+      text-decoration: none;
+  }
+
+  .categories-text {
+      font-size: 18px;
+      line-height: 27px;
+      text-align: center;
+      color: #0C0D36;
+      font-weight: normal;
+      margin-top: 12px;
+  }
+
+}
  
  .component-products {
    margin-bottom: 20px;
