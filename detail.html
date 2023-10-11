@@ -97,7 +97,10 @@
           </div>
         </div>
       </section>
+
     </div>
+    <img src="images/images.png" alt="">
+
     <footer>
       <div class="container">
         <div class="row">
@@ -116,6 +119,41 @@
     <script>
       AOS.init();
     </script>
+    <script>
+       var gallery = new Vue({
+          el: "#galerry",
+          mounted(){
+            AOS.init();
+          },
+          data: {
+            activePhoto: 1,
+            photos: [
+                        {
+                          id: 1,
+                          url: "images/detail1.png"
+                        },
+                        {
+                          id: 2,
+                          url: "images/detail2.png"
+                        },
+                        {
+                          id: 3,
+                          url: "images/detail3.png"
+                        },
+                        {
+                          id: 4,
+                          url: "images/detail4.png"
+                        }
+            ]
+          },
+          methods:{
+            changeActive(id){
+              this.activePhoto = id;
+            }
+          }
+       })
+    </script>
+    <script src="vendor/vue/vue.js"></script>
     <script src="/script/navbar-scroll.js"></script>
   </body>
 </html>
