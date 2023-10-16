@@ -12,64 +12,88 @@
     <title>Store - Your Best Marketplace</title>
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style/main.css">
+    <link href="style/main.css" rel="stylesheet" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top" data-aos="fade-down">
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top"
+      data-aos="fade-down"
+      aria-label="Navbar"
+    >
       <div class="container">
-        <a href="index.html" class="navbar-brand">
-          <img src="images/logo.svg" alt="logo"/>
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo.svg" alt="" />
         </a>
-        <button class="navbar-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#navbarResponsive"
-          >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
+              <a class="nav-link" href="/">Home </a>
             </li>
             <li class="nav-item">
-              <a href="categories.html" class="nav-link">Categories</a>
+              <a class="nav-link" href="/categories.html">Categories</a>
             </li>
-            <li class="nav-item ">
-              <a href="#" class="nav-link">Rewards</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rewards</a>
             </li>
           </ul>
-           <!-- desktop menu  -->
-           <ul class="navbar-nav d-none d-lg-flex">
+
+          <!-- Desktop Menu -->
+          <ul class="navbar-nav d-none d-lg-flex">
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
-                <img src="images/user_pc.png" alt="" class="rounded-circle mr-2 profile-picture"> Hi, Alwani
+              <a
+                class="nav-link"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img
+                  src="/images/icon-user.png"
+                  alt=""
+                  class="rounded-circle mr-2 profile-picture"
+                />
+                Hi, Angga
               </a>
-              <div class="dropdown-menu">
-                <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
-                <a href="/dashboard-account.html" class="dropdown-item">Setting</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/dashboard.html">Dashboard</a>
+                <a class="dropdown-item" href="/dashboard-account.html"
+                  >Settings</a
+                >
                 <div class="dropdown-divider"></div>
-                <a href="/dashboard-account.html" class="dropdown-item">Logout</a>
+                <a class="dropdown-item" href="/">Logout</a>
               </div>
             </li>
-            <li>
-              <li class="nav-item">
-                <a href="" class="nav link d-inline-block mt-2">
-                  <img src="/images/cart.svg" alt="">
-                </a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link d-inline-block mt-2" href="#">
+                <img src="/images/icon-cart-empty.svg" alt="" />
+              </a>
             </li>
           </ul>
-          <!-- mobile  -->
+
+          <!-- Mobile Menu -->
           <ul class="navbar-nav d-block d-lg-none">
             <li class="nav-item">
-              <a href="" class="nav-link">
-                Hi, Alwani
+              <a class="nav-link" href="#">
+                Hi, Angga
               </a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link d-inline-block">
+              <a class="nav-link d-inline-block" href="#">
                 Cart
               </a>
             </li>
@@ -77,18 +101,21 @@
         </div>
       </div>
     </nav>
-    <!-- page content  -->
+
+    <!-- Page Content -->
     <div class="page-content page-details">
-      <section class="store-breadcrumbs" data-aos="fade-down" data-aos-delay="100">
+      <section
+        class="store-breadcrumbs"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <nav>
+              <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="/index.html">Home</a>
-                  </li>
-                  <li class="breadcrumb-item active">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
                     Product Details
                   </li>
                 </ol>
@@ -101,15 +128,31 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8" data-aos="zoom-in">
-              <Transition name="slide-fade" mode="out-in"> 
-                <img :src="photos[activePhoto].url" :key="photos[activePhoto].id" class="w-100 main-image" alt="">
-              </Transition>
+              <transition name="slide-fade" mode="out-in">
+                <img
+                  :key="photos[activePhoto].id"
+                  :src="photos[activePhoto].url"
+                  class="w-100 main-image"
+                  alt=""
+                />
+              </transition>
             </div>
             <div class="col-lg-2">
               <div class="row">
-                <div class="col-3 col-lg-12 mt-2 mt-lg-0" v-for="(photo, index) in photos" :key="photos.id" data-aos="zoom-in" data-aos-delay="100">
+                <div
+                  class="col-3 col-lg-12 mt-2 mt-lg-0"
+                  v-for="(photo, index) in photos"
+                  :key="photo.id"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
                   <a href="#" @click="changeActive(index)">
-                    <img :src="photo.url" alt="" class="w-100 thumbnail-image" :class="{active: index == activePhoto}">
+                    <img
+                      :src="photo.url"
+                      class="w-100 thumbnail-image"
+                      :class="{ active: index == activePhoto }"
+                      alt=""
+                    />
                   </a>
                 </div>
               </div>
@@ -123,13 +166,17 @@
             <div class="row">
               <div class="col-lg-8">
                 <h1>Sofa Ternyaman</h1>
-                <div class="owner">By Alwani Achmad</div>
+                <div class="owner">By Galih Pratama</div>
                 <div class="price">$1,409</div>
               </div>
               <div class="col-lg-2" data-aos="zoom-in">
-                <a href="cart.html" class="btn btn-success px-4 text-white btn-block mb-3"> Add To Cart</a>
+                <a
+                  class="btn btn-success nav-link px-4 text-white btn-block mb-3"
+                  href="/cart.html"
+                  >Add to Cart</a
+                >
               </div>
-            </div> 
+            </div>
           </div>
         </section>
         <section class="store-description">
@@ -154,35 +201,53 @@
             </div>
           </div>
         </section>
-        <section class="store-riview">
+        <section class="store-review">
           <div class="container">
             <div class="row">
               <div class="col-12 col-lg-8 mt-3 mb-3">
-                <h5>Customer Riview(3)</h5>
+                <h5>Customer Review (3)</h5>
               </div>
             </div>
             <div class="row">
               <div class="col-12 col-lg-8">
                 <ul class="list-unstyled">
                   <li class="media">
-                    <img src="images/user1.png" alt="" class="mr-3 rounded-circle">
+                    <img
+                      src="/images/user1.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
                     <div class="media-body">
-                      <h5 class="mt-2 mb-1">Bagus Anandityo</h5>
-                      Sofanya Nyaman bisa buat tidur tapi minusnya kasusrnya ga empuk, kurang bantal selebihnya okk
+                      <h5 class="mt-2 mb-1">Hazza Risky</h5>
+                      I thought it was not good for living room. I really happy
+                      to decided buy this product last week now feels like
+                      homey.
+                    </div>
+                  </li>
+                  <li class="media my-4">
+                    <img
+                      src="/images/user2.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
+                    <div class="media-body">
+                      <h5 class="mt-2 mb-1">Anna Sukkirata</h5>
+                      Color is great with the minimalist concept. Even I thought
+                      it was made by Cactus industry. I do really satisfied with
+                      this.
                     </div>
                   </li>
                   <li class="media">
-                    <img src="images/user2.png" alt="" class="mr-3 rounded-circle">
+                    <img
+                      src="/images/user3.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
                     <div class="media-body">
-                      <h5 class="mt-2 mb-1">Bewok</h5>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    </div>
-                  </li>
-                  <li class="media">
-                    <img src="images/user3.png" alt="" class="mr-3 rounded-circle">
-                    <div class="media-body">
-                      <h5 class="mt-2 mb-1">Alwani</h5>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                      <h5 class="mt-2 mb-1">Dakimu Wangi</h5>
+                      When I saw at first, it was really awesome to have with.
+                      Just let me know if there is another upcoming product like
+                      this.
                     </div>
                   </li>
                 </ul>
@@ -198,53 +263,54 @@
         <div class="row">
           <div class="col-12 text-center">
             <p class="pt-4 pb-2">
-              2023 Copyright Alwani. All Rights Reserved.
+              2019 Copyright Store. All Rights Reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
+
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/vue/vue.js"></script>
     <script src="/vendor/jquery/jquery.slim.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+    <script src="/vendor/vue/vue.js"></script>
     <script>
-       var gallery = new Vue({
-          el: "#gallery",
-          mounted(){
-            AOS.init();
+      var gallery = new Vue({
+        el: "#gallery",
+        mounted() {
+          AOS.init();
+        },
+        data: {
+          activePhoto: 3,
+          photos: [
+            {
+              id: 1,
+              url: "/images/detail-test.jpeg",
+            },
+            {
+              id: 2,
+              url: "/images/detail-test2.jpeg",
+            },
+            {
+              id: 3,
+              url: "/images/detail-test3.jpeg",
+            },
+            {
+              id: 4,
+              url: "/images/detail-test4.jpeg",
+            },
+          ],
+        },
+        methods: {
+          changeActive(id) {
+            this.activePhoto = id;
           },
-          data: {
-            activePhoto: 1,
-            photos: [
-                        {
-                          id: 1,
-                          url: "images/detail-test.jpeg"
-                        },
-                        {
-                          id: 2,
-                          url: "images/detail-test2.jpeg"
-                        },
-                        {
-                          id: 3,
-                          url: "images/detail-test3.jpeg"
-                        },
-                        {
-                          id: 4,
-                          url: "images/detail-test4.jpeg"
-                        }
-            ]
-          },
-          methods:{
-            changeActive(id){
-              this.activePhoto = id;
-            }
-          }
-       })
+        },
+      });
     </script>
     <script src="/script/navbar-scroll.js"></script>
   </body>
