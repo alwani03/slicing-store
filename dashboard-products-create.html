@@ -179,8 +179,8 @@
                               <div class="form-group">
                                 <label for="description">Description</label>
                                 <textarea
-                                  name="descrioption"
-                                  id=""
+                                  name="editor1"
+                                  id="editor1"
                                   cols="30"
                                   rows="4"
                                   class="form-control"
@@ -241,6 +241,10 @@ The Nike Air Max 720 SE goes bigger than ever before with Nike's tallest Air uni
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
       });
+    </script>
+    <script src="https://cdn.ckeditor.com/4.23.0-lts/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'editor1' );
     </script>
   </body>
 </html>
